@@ -34,13 +34,28 @@ class RegisterGroupContainer extends Component {
                 "groupName": this.state.groupName,
             };
             localStorage.setItem("entry", JSON.stringify(entry));
-            // Save allEntries back to local storage
+            // issaugom entry
             existingGroups.push(entry);
             localStorage.setItem("groups", JSON.stringify(existingGroups));
             alert("sėkmingai sukurta grupė")
         }
     }
+    /*su duombaze taip atrodytu, ir paskui istustintu languss
+               var outputGroup {
+                    groupName: this.state.groupName};
 
+                }
+                axios.post(API + "/api/groups/groups/new", outputGroup)
+                    .then((response) => {
+                        this.setState({
+                            groupName: ''
+                        });
+                        alert("Grupė užregistruota!");
+                    })
+                    .catch((error) => {
+                        console.log(error);
+                    });
+                event.preventDefault(); */
     render() {
         return (
             <div>

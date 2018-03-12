@@ -8,7 +8,7 @@ class AdminContainer extends React.Component {
 
   render() {
     return (
-
+<body background="blue">
       <div className="container">
         <TopNavBar />
         <div className="row">
@@ -17,6 +17,7 @@ class AdminContainer extends React.Component {
           </div>
         </div>
       </div>
+</body>
 
     );
   }

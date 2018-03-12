@@ -26,10 +26,13 @@ class TopNavBar extends Component {
               <li className="dropdown">
                 <a href="/" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Meniu <span className="caret"></span></a>
                 <ul className="dropdown-menu">
+                    <li><Link to="/admin"><span className="glyphicon glyphicon-home" aria-hidden="true"></span>Pagrinidinis puslapis</Link></li>
+                    <li role="separator" className="divider"></li>
                   <li><Link to="/admin/register/user"><span className="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>Sukurti vartotoją</Link></li>
                   <li><Link to="/admin/register/group"><span className="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>Sukurti grupę</Link></li>
                   <li role="separator" className="divider"></li>
-                    <li><Link to="/admin/userList"><span className="glyphicon-search" aria-hidden="true"></span>Vartotojų sąrašas</Link></li>
+                    <li><Link to="/admin/users"><span className="glyphicon glyphicon-search" aria-hidden="true"></span>Vartotojų sąrašas</Link></li>
+                    <li><Link to="/admin/groups"><span className="glyphicon glyphicon-search" aria-hidden="true"></span>Grupių sąrašas</Link></li>
                 </ul>
               </li>
             </ul>

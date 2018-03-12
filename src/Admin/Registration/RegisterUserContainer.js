@@ -43,7 +43,7 @@ class RegisterUserContainer extends Component {
                 "userGroup": this.state.userGroup
             };
             localStorage.setItem("entry", JSON.stringify(entry));
-            // Save allEntries back to local storage
+            // Issaugom entry
             existingUsers.push(entry);
             localStorage.setItem("allUsers", JSON.stringify(existingUsers));
             alert("sėkmingai sukurtas vartotojas")
@@ -61,7 +61,7 @@ class RegisterUserContainer extends Component {
                     this.setState({
                         name: '',
                         email: '',
-                        group: ''
+                        userGroup: ''
                     });
                     alert("Vartotojas užregistruotas!");
                 })

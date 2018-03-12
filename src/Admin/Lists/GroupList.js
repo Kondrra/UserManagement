@@ -1,27 +1,27 @@
 import React, {Component} from 'react';
 import {API} from '../ApiUrl';
 import axios from 'axios';
-import UserListComponent from "./UserListComponent";
+import GroupListComponent from './GroupListComponent';
 
 
-class UserList extends Component {
+class GroupList extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {users: [], search: ''};
+        this.state = {groups: [], search: ''};
     }
 
     componentDidMount = () => {
-        localStorage.getItem('allUsers') && this.setState({
-            users: JSON.parse(localStorage.getItem('allUsers'))
+        localStorage.getItem('groups') && this.setState({
+            groups: JSON.parse(localStorage.getItem('groups'))
         })
 
     };
     /*su duomenu baze.
     componentDidMount = () => {
-        axios.get(API + "/api/users")
+        axios.get(API + "/api/groups")
             .then((response) => {
-                this.setState({users: response.data});
+                this.setState({groups: response.data});
             })
             .catch((error) => {
                 console.log(error);
@@ -30,12 +30,11 @@ class UserList extends Component {
         this.setState({search: event.target.value});
     };
     render() {
-        if (this.state.users === null) {
+        if (this.state.groups === null) {
             return (<div>nieko nėra</div>)
         } else {
-            let filteredUsers = this.state.users.filter((user) => {
-                    return user.name.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1 || user.email.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1||
-                        user.userGroup.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1;
+            let filteredGroups = this.state.groups.filter((group) => {
+                    return group.groupName.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1;
                 }
             );
             return (
@@ -51,12 +50,12 @@ class UserList extends Component {
                         </div>
                     </form>
                     <div>
-                        <UserListComponent users={filteredUsers} history={this.props.history}/>
-                    </div>
+                         <GroupListComponent groups={filteredGroups} history={this.props.history}/>
+                   </div>
                 </div>
             );
         }
     }
 }
 
-export default UserList;
+export default GroupList;

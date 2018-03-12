@@ -41,7 +41,7 @@ const RegisterUserComponent = (props) => {
             <div className="form-group">
                 <label className="col-sm-2 control-label">El. paštas</label>
                 <div className="col-sm-3">
-                    <input type="text" className="form-control" id="email" placeholder="zmogus@tinklapis.com" value={props.email}
+                    <input type="email" className="form-control" id="email" placeholder="zmogus@tinklapis.com" value={props.email}
                            onChange={props.onChange}/>
                 </div>
             </div>

@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
 import {API} from '../ApiUrl';
 import axios from 'axios';
-import UserListComponent from "./UserListComponent";
+import UserListComponent from "../Lists/UserListComponent";
 
 
-class UserList extends Component {
+class GroupDetailsContainer extends Component {
 
     constructor(props) {
         super(props);
@@ -17,9 +17,9 @@ class UserList extends Component {
         })
 
     };
-    /*su duomenu baze.
+    /*su duomenu baze istrauktume informacija is saraso, kuris nurodo visus users is sitos grupes, pagal grupes id, kuris gaunamas paspaudus.
     componentDidMount = () => {
-        axios.get(API + "/api/users")
+        axios.get(API + "/api/users/"+this.props.match.params.id)
             .then((response) => {
                 this.setState({users: response.data});
             })
@@ -34,8 +34,7 @@ class UserList extends Component {
             return (<div>nieko nėra</div>)
         } else {
             let filteredUsers = this.state.users.filter((user) => {
-                    return user.name.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1 || user.email.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1||
-                        user.userGroup.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1;
+                    return user.name.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1 || user.email.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1;
                 }
             );
             return (
@@ -59,4 +58,4 @@ class UserList extends Component {
     }
 }
 
-export default UserList;
+export default GroupDetailsContainer;
